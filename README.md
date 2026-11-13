@@ -1,4 +1,10 @@
-# Página de masajes
+# Alivio Terapia Corporal
 
-Sitio estático (HTML, CSS y JS). Edita los datos del negocio en `config.js`:
-nombre, número de WhatsApp, horario, lugar y lista de servicios con precios.
+Sitio estático (HTML, CSS y JS) de Alivio Terapia Corporal, "Un break al estrés".
+
+- `index.html`: contenido, paquetes y textos.
+- `styles.css`: colores y diseño.
+- `script.js`: número de WhatsApp (primera línea), promociones, test y técnicas.
+- `assets/`: logo y fotos (Unsplash).
+
+No requiere instalación ni compilación: se publica tal cual en Cloudflare Pages.

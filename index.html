@@ -1,51 +1,267 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Masajes Relax | Bienestar y descanso</title>
-  <meta name="description" content="Masajes relajantes, descontracturantes y terapéuticos. Agenda tu cita por WhatsApp.">
+  <title>Alivio Terapia Corporal | Un break al estrés</title>
+  <meta name="description" content="Masajes de relajación, alivio muscular y terapia total. Atención solo con cita. $100 de descuento en tu primera visita. Agenda por WhatsApp.">
+  <meta property="og:title" content="Alivio Terapia Corporal | Un break al estrés">
+  <meta property="og:description" content="Masajes desde 35 minutos. $100 de descuento en tu primera visita. Agenda por WhatsApp.">
+  <meta property="og:image" content="assets/logo.jpg">
+  <meta name="theme-color" content="#1d5045">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top">
-    <a class="logo" href="#inicio" data-biz-name>Masajes Relax</a>
-    <nav>
-      <a href="#servicios">Servicios</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
+  <header class="top" id="top">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo.svg" alt="" width="40" height="40">
+      <span><b>alivio</b><small>Terapia corporal</small></span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#test">¿Lo necesitas?</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#tecnicas">Técnicas</a>
+      <a href="#dudas">Dudas</a>
     </nav>
+    <a class="btn small" data-wa="Hola, quiero agendar una cita en Alivio Terapia Corporal.">Agendar cita</a>
   </header>
 
   <main>
-    <section id="inicio" class="hero">
-      <h1>Descansa cuerpo y mente</h1>
-      <p>Masajes profesionales para aliviar el estrés, las contracturas y el cansancio.</p>
-      <a class="btn" data-wa="Hola, quiero agendar un masaje.">Agendar por WhatsApp</a>
+    <!-- Portada -->
+    <section class="hero" id="inicio">
+      <span class="blob b1"></span><span class="blob b2"></span>
+      <div class="hero-text">
+        <p class="eyebrow">Alivio · Terapia corporal</p>
+        <h1>Un break <span class="accent">al estrés</span></h1>
+        <p class="lead">Tu cuerpo lleva semanas avisándote: cuello duro, espalda cargada, sueño ligero. Regálale un rato para soltar todo eso.</p>
+        <div class="cta-row">
+          <a class="btn" data-wa="Hola, quiero agendar una cita en Alivio Terapia Corporal.">Agendar por WhatsApp</a>
+          <a class="btn ghost" href="#paquetes">Ver paquetes</a>
+        </div>
+        <ul class="chips">
+          <li>Solo con cita</li>
+          <li>$100 de descuento en tu primera visita</li>
+          <li>Sesiones de 35, 50 y 70 min</li>
+        </ul>
+      </div>
+      <div class="hero-pic">
+        <img src="assets/hero.jpg" alt="Masaje de espalda con aceite" width="1000" height="667">
+        <img class="seal" src="assets/logo.svg" alt="Logo de Alivio Terapia Corporal" width="110" height="110">
+      </div>
     </section>
 
-    <section id="servicios" class="wrap">
-      <h2>Servicios</h2>
-      <div class="cards" id="cards"></div>
+    <!-- Test interactivo -->
+    <section class="wrap" id="test">
+      <div class="head reveal">
+        <p class="eyebrow">Test de 20 segundos</p>
+        <h2>¿Tu cuerpo te está pidiendo un masaje?</h2>
+        <p>Marca lo que te pasa esta semana y te decimos qué paquete te conviene.</p>
+      </div>
+      <div class="quiz reveal">
+        <div class="quiz-opts" id="quizOpts">
+          <label><input type="checkbox" value="Cuello y hombros tensos"><span>Cuello y hombros tensos</span></label>
+          <label><input type="checkbox" value="Dolor de espalda"><span>Dolor o carga en la espalda</span></label>
+          <label><input type="checkbox" value="Muchas horas sentado o de pie"><span>Paso muchas horas sentado o de pie</span></label>
+          <label><input type="checkbox" value="Me cuesta dormir"><span>Me cuesta dormir o despierto cansado</span></label>
+          <label><input type="checkbox" value="Estrés constante"><span>Ando estresado casi todo el día</span></label>
+          <label><input type="checkbox" value="Piernas y pies cansados"><span>Piernas, tobillos o pies cansados</span></label>
+          <label><input type="checkbox" value="Manos y muñecas cargadas"><span>Manos y muñecas cargadas</span></label>
+          <label data-total><input type="checkbox" value="Quiero consentirme completo"><span>Hace mucho que no me consiento</span></label>
+        </div>
+        <div class="quiz-result" aria-live="polite">
+          <p class="meter-label">Nivel de tensión: <b id="meterText">sin marcar</b></p>
+          <div class="meter"><i id="meterBar"></i></div>
+          <h3 id="quizTitle">Marca al menos una opción</h3>
+          <p id="quizText">Cada señal que marques nos ayuda a recomendarte la sesión adecuada.</p>
+          <a class="btn" id="quizBtn" hidden>Quiero este masaje</a>
+        </div>
+      </div>
     </section>
 
-    <section id="sobre-mi" class="wrap alt">
-      <h2>Sobre mí</h2>
-      <p>Soy terapeuta de masajes con experiencia en técnicas relajantes y terapéuticas. Cada sesión se adapta a lo que tu cuerpo necesita, en un ambiente tranquilo y cómodo.</p>
+    <!-- Beneficios -->
+    <section class="band" id="beneficios">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="eyebrow">Por qué darte un masaje</p>
+          <h2>Lo que un buen masaje hace por ti</h2>
+          <p>No es un lujo: es mantenimiento para un cuerpo que trabaja todos los días.</p>
+        </div>
+        <div class="grid benefits">
+          <article class="benefit reveal"><span class="ico">🌿</span><h3>Baja el estrés</h3><p>Es el beneficio mejor respaldado por los estudios: el masaje ayuda a reducir el estrés y a que el cuerpo salga del modo “alerta”.</p></article>
+          <article class="benefit reveal"><span class="ico">💆</span><h3>Suelta la tensión muscular</h3><p>Cuello, hombros y espalda acumulan la carga del día. El masaje ayuda a disminuir esa tensión y la sensación de rigidez.</p></article>
+          <article class="benefit reveal"><span class="ico">✨</span><h3>Alivia el dolor</h3><p>Puede dar alivio a corto plazo en molestias como el dolor de espalda baja, sobre todo cuando se combina con buenos hábitos.</p></article>
+          <article class="benefit reveal"><span class="ico">🌙</span><h3>Te ayuda a descansar</h3><p>Cuando el estrés no te deja dormir, relajar el cuerpo antes de la noche puede ayudarte a conciliar mejor el sueño.</p></article>
+          <article class="benefit reveal"><span class="ico">🏃</span><h3>Recupera músculos cansados</h3><p>Después del ejercicio o de una jornada pesada, alivia de forma temporal el dolor muscular y la fatiga.</p></article>
+          <article class="benefit reveal"><span class="ico">😊</span><h3>Mejora tu ánimo</h3><p>Una sesión puede reducir la ansiedad del momento y dejarte con una sensación real de bienestar y calma.</p></article>
+        </div>
+        <p class="note reveal">Información basada en publicaciones de Mayo Clinic y del Centro Nacional de Salud Complementaria e Integral de EE. UU. (NCCIH). El masaje complementa, no sustituye, la atención médica.</p>
+      </div>
     </section>
 
-    <section id="contacto" class="wrap">
-      <h2>Contacto</h2>
-      <p data-schedule></p>
-      <p data-place></p>
-      <a class="btn" data-wa="Hola, quiero más información sobre los masajes.">Escríbeme por WhatsApp</a>
+    <!-- Paquetes -->
+    <section class="wrap" id="paquetes">
+      <div class="head reveal">
+        <p class="eyebrow">Paquetes</p>
+        <h2>Elige tu break</h2>
+        <p>Cada paquete incluye todo lo del anterior y suma más.</p>
+      </div>
+      <div class="toggle reveal" role="group" aria-label="Tipo de visita">
+        <button type="button" data-mode="regular">Precio regular</button>
+        <button type="button" data-mode="primera" class="on">Mi primera visita</button>
+        <button type="button" data-mode="segunda">Mi segunda visita</button>
+      </div>
+      <p class="promo-line reveal" id="promoLine"></p>
+      <div class="grid plans">
+        <article class="plan reveal" data-id="relajacion" data-name="Masaje Relajación" data-base="299">
+          <img src="assets/relajacion.jpg" alt="Manos dando masaje en la espalda" loading="lazy" width="1000" height="667">
+          <div class="plan-body">
+            <h3>Masaje Relajación</h3>
+            <p class="time">35 minutos</p>
+            <p class="price"><s></s><b></b></p>
+            <ul>
+              <li>Masaje sueco</li>
+              <li>Masaje de vibración</li>
+            </ul>
+            <p class="for">Ideal para desconectarte rápido y soltar el estrés del día.</p>
+            <a class="btn block">Reservar</a>
+          </div>
+        </article>
+        <article class="plan reveal" data-id="alivio" data-name="Masaje Alivio" data-base="349">
+          <img src="assets/alivio.jpg" alt="Termoterapia con piedras calientes en la espalda" loading="lazy" width="1000" height="667">
+          <div class="plan-body">
+            <h3>Masaje Alivio</h3>
+            <p class="time">50 minutos</p>
+            <p class="price"><s></s><b></b></p>
+            <ul>
+              <li>Masaje sueco</li>
+              <li>Masaje de vibración</li>
+              <li class="plus">Termoterapia</li>
+              <li class="plus">Electroterapia</li>
+            </ul>
+            <p class="for">Para espalda, cuello y hombros con tensión acumulada.</p>
+            <a class="btn block">Reservar</a>
+          </div>
+        </article>
+        <article class="plan star reveal" data-id="total" data-name="Terapia Total" data-base="649">
+          <span class="tag">El más completo</span>
+          <img src="assets/total.jpg" alt="Aplicación de mascarilla facial" loading="lazy" width="1000" height="667">
+          <div class="plan-body">
+            <h3>Terapia Total</h3>
+            <p class="time">70 minutos</p>
+            <p class="price"><s></s><b></b></p>
+            <ul>
+              <li>Todo lo del Masaje Alivio</li>
+              <li class="plus">Aromaterapia</li>
+              <li class="plus">Masaje de manos y muñecas</li>
+              <li class="plus">Masaje de tobillos</li>
+              <li class="plus">Masaje facial antiarrugas</li>
+              <li class="plus">Mascarilla para cara, manos y pies</li>
+            </ul>
+            <p class="for">De la cara a los pies: la experiencia completa para consentirte.</p>
+            <a class="btn block">Reservar</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Técnicas -->
+    <section class="band" id="tecnicas">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="eyebrow">Qué incluye tu sesión</p>
+          <h2>Conoce cada técnica</h2>
+        </div>
+        <div class="tabs reveal">
+          <div class="tab-btns" role="tablist">
+            <button role="tab" class="on" data-tab="sueco">Masaje sueco</button>
+            <button role="tab" data-tab="vibra">Vibración</button>
+            <button role="tab" data-tab="termo">Termoterapia</button>
+            <button role="tab" data-tab="electro">Electroterapia</button>
+            <button role="tab" data-tab="aroma">Aromaterapia</button>
+            <button role="tab" data-tab="facial">Facial y mascarilla</button>
+          </div>
+          <div class="tab-panel">
+            <img id="tabImg" src="assets/cuello.jpg" alt="" loading="lazy" width="1000" height="667">
+            <div>
+              <h3 id="tabTitle"></h3>
+              <p id="tabText"></p>
+              <p class="in" id="tabIn"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Respiración -->
+    <section class="wrap breathe-sec" id="break">
+      <div class="head reveal">
+        <p class="eyebrow">Pruébalo ahora</p>
+        <h2>Tómate un break de 30 segundos</h2>
+        <p>Sigue el círculo con tu respiración. Así de fácil empieza a bajar la tensión.</p>
+      </div>
+      <div class="breathe reveal">
+        <div class="ring" id="ring"><span id="ringText">Listo</span></div>
+        <button class="btn ghost" id="breatheBtn" type="button">Empezar</button>
+        <p id="breatheMsg" class="breathe-msg" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- Cómo agendar -->
+    <section class="band" id="cita">
+      <div class="wrap">
+        <div class="head reveal">
+          <p class="eyebrow">Atención solo con cita</p>
+          <h2>Agendar es muy fácil</h2>
+        </div>
+        <ol class="steps">
+          <li class="reveal"><b>1</b><h3>Escríbenos</h3><p>Mándanos un WhatsApp y cuéntanos qué paquete te interesa.</p></li>
+          <li class="reveal"><b>2</b><h3>Elige día y hora</h3><p>Acordamos el horario que mejor te quede. Tu espacio queda reservado solo para ti.</p></li>
+          <li class="reveal"><b>3</b><h3>Llega y suéltate</h3><p>Tú solo relájate. Nosotros nos encargamos del resto.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Dudas -->
+    <section class="wrap narrow" id="dudas">
+      <div class="head reveal">
+        <p class="eyebrow">Dudas frecuentes</p>
+        <h2>Antes de tu cita</h2>
+      </div>
+      <details class="reveal"><summary>¿Cómo funcionan los descuentos?</summary><p>En tu primera visita tienes $100 de descuento en cualquier paquete. En tu segunda visita, el paquete Terapia Total tiene 50% de descuento.</p></details>
+      <details class="reveal"><summary>¿Necesito cita?</summary><p>Sí. Atendemos únicamente con cita para darte el tiempo y la atención que mereces. Agenda por WhatsApp.</p></details>
+      <details class="reveal"><summary>¿Cuál paquete me conviene?</summary><p>Si solo quieres desconectarte, Masaje Relajación. Si traes tensión o molestias en espalda y cuello, Masaje Alivio. Si quieres la experiencia completa de cara a pies, Terapia Total. También puedes hacer el <a href="#test">test rápido</a>.</p></details>
+      <details class="reveal"><summary>¿Cada cuánto conviene un masaje?</summary><p>Depende de tu ritmo de vida. Muchas personas notan mejores resultados con una sesión cada dos a cuatro semanas, porque la tensión se vuelve a acumular.</p></details>
+      <details class="reveal"><summary>¿Hay casos en que no se recomienda?</summary><p>Avísanos antes de tu cita si estás embarazada, tienes fiebre, una lesión reciente, problemas de coagulación, heridas en la piel o usas marcapasos (la electroterapia no se aplica en ese caso). Si tienes un dolor sin explicación, consulta primero a tu médico.</p></details>
+    </section>
+
+    <!-- Cierre -->
+    <section class="final">
+      <img src="assets/ambiente.jpg" alt="" loading="lazy">
+      <div class="final-box reveal">
+        <h2>Tu cuerpo ya hizo su parte. Ahora te toca a ti.</h2>
+        <p>Agenda hoy y aprovecha $100 de descuento en tu primera visita.</p>
+        <a class="btn light" data-wa="Hola, quiero agendar mi primera visita con $100 de descuento.">Agendar por WhatsApp</a>
+      </div>
     </section>
   </main>
 
-  <footer><p>© <span id="year"></span> <span data-biz-name>Masajes Relax</span></p></footer>
+  <footer>
+    <img src="assets/logo.svg" alt="" width="48" height="48">
+    <p><b>Alivio Terapia Corporal</b> · Un break al estrés</p>
+    <p>Atención solo con cita · WhatsApp <a data-wa="Hola, quiero información de Alivio Terapia Corporal.">735 145 3373</a></p>
+    <p class="tiny">© <span id="year"></span> Alivio Terapia Corporal. Fotos de Unsplash.</p>
+  </footer>
 
-  <a class="float" data-wa="Hola, quiero agendar un masaje." aria-label="WhatsApp">WhatsApp</a>
-  <script src="config.js"></script>
+  <a class="float" data-wa="Hola, quiero agendar una cita en Alivio Terapia Corporal." aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.800 2 6.800L3 29l6.700-2c1.900 1 4 1.600 6.300 1.600 7.200 0 13-5.700 13-12.800S23.200 3 16 3zm0 23.300c-2 0-3.900-.6-5.500-1.600l-.4-.2-4 1.200 1.200-3.800-.3-.4c-1.100-1.700-1.700-3.700-1.700-5.700C5.300 9.900 10.100 5.300 16 5.300s10.700 4.700 10.700 10.500S21.900 26.300 16 26.300zm5.900-7.900c-.3-.2-1.900-.9-2.200-1s-.5-.2-.7.2-.8 1-1 1.200-.4.200-.7.100c-1.900-.9-3.100-1.700-4.300-3.800-.3-.6.3-.5.900-1.700.1-.2 0-.4 0-.6s-.7-1.700-1-2.300c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.300-1.200 1.200-1.200 2.800s1.200 3.300 1.400 3.500c.2.200 2.400 3.600 5.800 5 2.200.9 3 .9 4.100.8.700-.1 1.900-.800 2.200-1.500.3-.7.3-1.400.2-1.500-.1-.2-.3-.2-.6-.4z"/></svg>
+    <span>Agendar</span>
+  </a>
+
   <script src="script.js"></script>
 </body>
 </html>
