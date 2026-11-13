@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Masajes Relax | Bienestar y descanso</title>
+  <meta name="description" content="Masajes relajantes, descontracturantes y terapéuticos. Agenda tu cita por WhatsApp.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <a class="logo" href="#inicio" data-biz-name>Masajes Relax</a>
+    <nav>
+      <a href="#servicios">Servicios</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <h1>Descansa cuerpo y mente</h1>
+      <p>Masajes profesionales para aliviar el estrés, las contracturas y el cansancio.</p>
+      <a class="btn" data-wa="Hola, quiero agendar un masaje.">Agendar por WhatsApp</a>
+    </section>
+
+    <section id="servicios" class="wrap">
+      <h2>Servicios</h2>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section id="sobre-mi" class="wrap alt">
+      <h2>Sobre mí</h2>
+      <p>Soy terapeuta de masajes con experiencia en técnicas relajantes y terapéuticas. Cada sesión se adapta a lo que tu cuerpo necesita, en un ambiente tranquilo y cómodo.</p>
+    </section>
+
+    <section id="contacto" class="wrap">
+      <h2>Contacto</h2>
+      <p data-schedule></p>
+      <p data-place></p>
+      <a class="btn" data-wa="Hola, quiero más información sobre los masajes.">Escríbeme por WhatsApp</a>
+    </section>
+  </main>
+
+  <footer><p>© <span id="year"></span> <span data-biz-name>Masajes Relax</span></p></footer>
+
+  <a class="float" data-wa="Hola, quiero agendar un masaje." aria-label="WhatsApp">WhatsApp</a>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
