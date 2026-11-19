@@ -1,5 +1,5 @@
 // Número de WhatsApp: código de país (52 = México) + número, sin espacios.
-const WHATSAPP = "527351453373";
+const WHATSAPP = "527351388291";
 
 document.documentElement.classList.add("js");
 const $ = (s, el = document) => el.querySelector(s);
@@ -75,21 +75,22 @@ $("#quizOpts").addEventListener("change", updateQuiz);
 
 /* Técnicas */
 const tech = {
-  sueco: ["Masaje sueco", "La técnica clásica de relajación: movimientos largos y suaves, amasamiento y círculos sobre los músculos. Ayuda a soltar la tensión y a calmar el cuerpo y la mente.", "Incluido en los tres paquetes", "assets/cuello.jpg"],
-  vibra: ["Masaje de vibración", "Vibración aplicada sobre los músculos para ayudar a relajarlos y dar una sensación de descanso profundo en las zonas más cargadas.", "Incluido en los tres paquetes", "assets/relajacion.jpg"],
-  termo: ["Termoterapia", "Aplicación de calor sobre la zona tensa. El calor relaja el músculo, da una sensación de alivio y lo prepara para un masaje más efectivo.", "Incluido en Masaje Alivio y Terapia Total", "assets/alivio.jpg"],
-  electro: ["Electroterapia", "Estímulos eléctricos suaves sobre zonas con tensión o molestia. Se siente como un hormigueo y ayuda a relajar el músculo. No se aplica a personas con marcapasos.", "Incluido en Masaje Alivio y Terapia Total", "assets/hero.jpg"],
-  aroma: ["Aromaterapia", "Aceites con aromas que acompañan la sesión para crear un ambiente de calma y ayudarte a desconectar por completo.", "Incluido en Terapia Total", "assets/aroma.jpg"],
-  facial: ["Masaje facial y mascarilla", "Masaje facial antiarrugas que relaja los músculos del rostro, más mascarilla para cara, manos y pies. Sales con la piel fresca y expresión descansada.", "Incluido en Terapia Total", "assets/total.jpg"],
+  sueco: ["Masaje sueco", "La técnica clásica de relajación: movimientos largos y suaves, amasamiento y círculos sobre los músculos. Ayuda a soltar la tensión y a calmar el cuerpo y la mente.", "Incluido en los tres paquetes", "assets/cuello.jpg", "💆"],
+  vibra: ["Masaje de vibración", "Se realiza con un aparato vibrador que da pequeños golpes sobre el cuerpo. Ayuda a relajar los músculos y a soltar las zonas más cargadas.", "Incluido en los tres paquetes", null, "〰️"],
+  termo: ["Termoterapia", "Aplicación de calor sobre la zona tensa. El calor relaja el músculo, da una sensación de alivio y lo prepara para un masaje más efectivo.", "Incluido en Masaje Alivio y Terapia Total", null, "🔥"],
+  electro: ["Electroterapia", "Estímulos eléctricos suaves sobre zonas con tensión o molestia. Se siente como un hormigueo y ayuda a relajar el músculo. No se aplica a personas con marcapasos.", "Incluido en Masaje Alivio y Terapia Total", null, "⚡"],
+  aroma: ["Aromaterapia", "Aceites con aromas que acompañan la sesión para crear un ambiente de calma y ayudarte a desconectar por completo.", "Incluido en Terapia Total", "assets/aroma.jpg", "🌸"],
+  facial: ["Masaje facial y mascarilla de colágeno", "Masaje facial antiarrugas que relaja los músculos del rostro, más mascarillas de colágeno para cara, manos y pies. Sales con la piel fresca y expresión descansada.", "Incluido en Terapia Total", "assets/facial.jpg", "✨"],
 };
 function setTab(key) {
-  const [title, text, inc, img] = tech[key];
+  const [title, text, inc, img, icon] = tech[key];
   $$(".tab-btns button").forEach((b) => b.classList.toggle("on", b.dataset.tab === key));
   $("#tabTitle").textContent = title;
   $("#tabText").textContent = text;
   $("#tabIn").textContent = inc;
-  $("#tabImg").src = img;
-  $("#tabImg").alt = title;
+  const pic = $("#tabImg"), ico = $("#tabIcon");
+  pic.hidden = !img; ico.hidden = !!img;
+  if (img) { pic.src = img; pic.alt = title; } else { ico.textContent = icon; }
   const panel = $(".tab-panel");
   panel.classList.remove("swap");
   void panel.offsetWidth;
